@@ -1,29 +1,31 @@
-// desestructuración de arreglos
-const personajes = ['Goku','Trunks','Bulma'];
-// console.log(personajes[0])
+// importar archivos
+// import {heroes} from './data/heroes';
+// import {heroes} from './data/heroes';
 
-const[, ,p3] = personajes;
-// const[p1] = personajes;
+import { heroes } from './data/heroes';
 
-console.log(p3)
+// console.log(heroes)
+
+// código rudimentario, pero con demasiado
+// const getHeroeById = (id)=>{
+//     return heroes.find((heroe) => {
+//         if (heroe.id === id){
+//             return true;
+//         }else{
+//             return false;
+//         }
+//     });
+// }
 
 
-const retornaArreglo = () =>{
-    return ['ABC',123];
-}
+//  const getHeroeById = (id)=>{
+//      return heroes.find((heroe) => heroe.id === id);
+//  }
 
-const [letras,numeros] = retornaArreglo();
-console.log(letras,numeros);
+//simplificar aún más
+ const getHeroeById = (id) => heroes.find((heroe) => heroe.id === id);
 
-// tarea 
-// 1.- el primer valor del arr se llamará nombre
-// 2.- se llamará setNombre
+ console.log(getHeroeById(2));
 
-const usesState  = (valor)=>{
-    return [valor, ()=>{console.log('Hola mundo')}];
-}
-
-// const arr = usesState('Lucas');
-const[nombre,setNombre] = usesState('Lucas');
-console.log(nombre)
-setNombre();
+ const getHeroesByOwner = (owner) => heroes.filter((heroe) => heroe.owner === owner);
+ console.log(getHeroesByOwner('DC'))
